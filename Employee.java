@@ -31,20 +31,26 @@ public class Employee{
      */
     public boolean canDrive(){
         int age = calculateAge(2025);
-        // to be completed
+        if age >= 16;
+        system.out.println("they can drive");
+        else return(age - yearOfBirth);
+        
     }
 
     /*
      * Returns the net pay for the outstanding unpaid hours
      */
-    private double calculatePay(){
-        // to be completed
+    private double calculatePay(double Total){
+        Total = (unpaidhours + hourlyWage);
+        Total = Total * 0.30;
     }
 
     /*
      * Output the payment record and resets unpaid hours
      */
     public void paySalary(){
-        // to be completed
+        System.out.println("has recieved a wire transfer of");
+        (Fullname + "" + Total);
+        unpaidhours = 0.0;
     }
 }
