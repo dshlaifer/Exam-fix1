@@ -10,7 +10,7 @@ public class Employee{
     private boolean onLeave;
     private double hourlyWage;
     private double unpaidHours;
-
+    private double Total;
     public Employee(String fullname, int yearOfBirth, double hourlyWage){
         this.fullname = fullname;
         this.yearOfBirth = yearOfBirth;
@@ -25,8 +25,8 @@ public class Employee{
     private int calculateAge(int currentYear){
         return (currentYear - yearOfBirth);
     }
-    private double setunpaidHours(){ // question 11
-        unpaidHours = paySalary - hourlyWage; 
+    private void setunpaidHours(double hoursWorked, double hoursPaid){ // question 11
+        this.unpaidHours = hoursWorked - hoursPaid; 
     }
     private double getunpaidHours(){  // question 11
         return unpaidHours;
@@ -36,9 +36,13 @@ public class Employee{
      */
     public boolean canDrive(){  //question 12
         int age = calculateAge(2025);
-        if age >= 16;
-        system.out.println("they can drive");
-        else return(age - yearOfBirth);
+        if (age >= 16) {
+        System.out.println("they can drive");
+        return true; }
+        else { 
+        int yearsMissing = 16 - age;
+        System.out.println("They cannot drive" + yearsMissing + "more year" + (yearsMissing > 1));
+        return false;}
         
     }
 
@@ -46,8 +50,9 @@ public class Employee{
      * Returns the net pay for the outstanding unpaid hours
      */
     private double calculatePay(double Total){  // question 13
-        Total = (unpaidHours + hourlyWage);
-        Total = Total * 0.30;
+        Total = unpaidHours * hourlyWage;
+        Total = Total * 0.70;
+        return Total;
     }
 
     /*
@@ -55,7 +60,7 @@ public class Employee{
      */
     public void paySalary(){  // question 14
         System.out.println("has recieved a wire transfer of");
-        (Fullname + "" + Total);
-        unpaidhours = 0.0;
+        System.out.println(fullname + ":$" + Total);
+        unpaidHours = 0.0;
     }
 }
